@@ -1,5 +1,5 @@
 import numpy as np
-
+'''
 a = np.matrix('1, 2; 3, 4; 5, 6')
 b = np.array([[2, 3],
              [4, 5],
@@ -17,6 +17,7 @@ km = np.array([[0, 0, 0, 0],
                [0, 1, 0, 0]])
 
 #print(km.__eq__(1))
+'''
 '''
 if 'hello' in 'hello world':
     print('we found it')
@@ -43,5 +44,14 @@ def scan_str4(stra, strb, strc, strd):
     outstr = scan_str2(strl, strr)
     return outstr
 
-print(scan_str4(r3c1, r3c2, r4c1, r4c2))
+#print(scan_str4(r3c1, r3c2, r4c1, r4c2))
 #print(scan_str2(r3c1, r3c2))
+
+arr1 = np.array([[1, 0, 1, 1],
+                 [1, 1, 1, 1]])
+
+
+if(arr1[0].all() == True):
+    print("all values are true ")
+else:
+    print("all values are not true")
