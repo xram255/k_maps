@@ -72,7 +72,8 @@ else:
 #print(kmt.scan8hor())
 print(len(kmt.scan8hor()))
 
-print(scan_str8(kmt.r_str, kmt.scan8hor()[0]))
+for inc in range(len(kmt.scan8hor())):
+    print(scan_str8(kmt.r_str, kmt.scan8hor()[inc]))
 
 #print(kmt.r_str[0])
 

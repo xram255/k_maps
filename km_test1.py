@@ -4,7 +4,7 @@ from time import sleep as delay
 r = np.array([[1, 0, 1, 1],
               [1, 1, 1, 1],
               [1, 1, 1, 1],
-              [1, 0, 1, 1]])
+              [1, 1, 1, 1]])
 
 r_str = np.array([['abcd', 'abcD', 'abCD', 'abCd'],
                   ['aBcd', 'aBcD', 'aBCD', 'aBCd'],
@@ -70,3 +70,4 @@ def mult_return():
 if __name__ =="__main__":
     #print(mult_return()[1])
     print(scan8hor())
+    print(len(scan8hor()))
