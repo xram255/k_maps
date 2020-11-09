@@ -69,5 +69,7 @@ def mult_return():
 
 if __name__ =="__main__":
     #print(mult_return()[1])
-    print(scan8hor())
-    print(len(scan8hor()))
+    #print(scan8hor())
+    #print(len(scan8hor()))
+    print("hello")
+
