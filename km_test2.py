@@ -10,12 +10,22 @@ mdict = {}
 names = ['john', 'juan', 'jason', 'jenny']
 ages = [32, 45, 25, 37]
 
+dict0 = {1 : 'Neo', 2: 'Trinity'}
+empty_list = []
+dict1 = dict(jamal = 24, harris = 32, samantha = 17, tom = 25)
+tuple1 = 'jenny', 23
+tuple2 = 'juanito', 44
+dict2 = dict([tuple1, tuple2])
 if __name__ == "__main__":
-    
+    print(dict2)
+    #print(list(dict0.values())[0])
+    #print(max(1, 4, 5))
+    #print(min(dict0.keys()))
+    '''
     for inc in range (len(names)):
         mdict[names[inc]] = ages[inc]
-
-    print(mdict)
+    '''
+    #print(mdict)
     #print(smdict.values()[1])
     '''
     del smdict['Toyota']

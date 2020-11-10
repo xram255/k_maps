@@ -13,6 +13,7 @@ r_str = np.array([['abcd', 'abcD', 'abCD', 'abCd'],
 
 
 c = r.T
+
 #print(r_str[0][3])
 #print(r, '\n\n', c)
 #--Scan All--
@@ -27,6 +28,7 @@ def scan_mt(inmt):
             if(indx2 == 1):
                 print(inc1, inc2)
         inc2 = 0
+
 '''
 scan_mt(r)
 print("---")
@@ -68,7 +70,7 @@ def mult_return():
 #nlist = [[0, 0, 0, 1], [1, 0, 0, 1]]
 
 if __name__ =="__main__":
-    
+    print("neon")
     #print(mult_return()[1])
     #print(scan8hor())
     #print(len(scan8hor()))
