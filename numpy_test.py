@@ -68,13 +68,18 @@ if(arr1[0].all() == True):
 else:
     print("all values are not true")
 '''
-print("hello")
+
 #print(kmt.scan8hor())
 #print(len(kmt.scan8hor()))
-
+'''
 for inc in range(len(kmt.scan8hor())):
     print(scan_str8(kmt.r_str, kmt.scan8hor()[inc]))
-
+'''
 #print(kmt.r_str[0])
 
+var1 = [1, 2, 8]
 
+def inprint(inval):
+    print(inval)
+
+inprint(var1)

@@ -17,7 +17,7 @@ tuple1 = 'jenny', 23
 tuple2 = 'juanito', 44
 dict2 = dict([tuple1, tuple2])
 if __name__ == "__main__":
-    print(dict2)
+    print(dict2.items())
     #print(list(dict0.values())[0])
     #print(max(1, 4, 5))
     #print(min(dict0.keys()))
