@@ -82,4 +82,15 @@ var1 = [1, 2, 8]
 def inprint(inval):
     print(inval)
 
-inprint(var1)
+def some_function():
+    d = dict()
+    d['name1'] = 'Toby'
+    d['name2'] = 50
+    return d
+
+def some_function2():
+    strval = 'answer is '
+    v = 51 
+    return {strval: v}
+
+print(some_function2())
