@@ -2,7 +2,7 @@ import numpy as np
 from time import sleep as delay
 
 r = np.array([[1, 0, 1, 1],
-              [1, 1, 1, 1],
+              [1, 1, 2, 1],
               [1, 1, 1, 1],
               [1, 1, 1, 1]])
 
@@ -68,12 +68,13 @@ def mult_return():
     return [gr, v]
 
 #nlist = [[0, 0, 0, 1], [1, 0, 0, 1]]
+def truecheck():
+    if r[0].all() >= 1:
+        print('all ok')
 
 if __name__ =="__main__":
-    print("neon")
     #print(mult_return()[1])
     #print(scan8hor())
     #print(len(scan8hor()))
     #print(r, '\n',nlist)
-
-
+    truecheck()

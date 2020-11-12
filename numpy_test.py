@@ -93,4 +93,3 @@ def some_function2():
     v = 51 
     return {strval: v}
 
-print(some_function2())
