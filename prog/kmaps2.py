@@ -1,7 +1,7 @@
 import numpy as np
 
 #-- Constant values--
-X = 32 # 2^6, 
+X = 2 # 2^6, 
 
 #                   C0      C1      C2      C3
 ROW = np.array([['abcd', 'abcD', 'abCD', 'abCd'],  # R1
@@ -12,40 +12,30 @@ ROW = np.array([['abcd', 'abcD', 'abCD', 'abCd'],  # R1
 COL = ROW.T
 #-------------------------
 # -- Inputs----
+'''
 row = np.array([[0, 0, 0, 0],
                 [0, 0, X, 0],
                 [1, 1, 1, X],
                 [0, 1, 0, 0]])
+'''
+row = np.array([[1, 1, 1, 1],
+                [1, 1, 1, 1],
+                [1, 1, 1, 1],
+                [1, 1, 1, 1]])
 
 col = row.T
 #-----------------------------
 
-def list_out(): # All data in 16 cells output as a list
+def row2list(): # All data in 16 cells output as a list
     outlist = []
     for inc1 in row:
         for inc2 in inc1:
             outlist.append(inc2)
     return outlist
 
-def nums2group(inlist): #numbers left to group
-    outv = 0
-    for inc in inlist:
-        outv += inc
-    return outv & 0b11111
-
-def zeros_count():
-    pass
-
-print(list_out().count(0))
+#print(row2list().count(1) + row2list().count(2))
 #print(nums2group(list_out()))
 
-'''
-outv = 0
-for inc1 in row:
-    for inc2 in inc1:
-        outv += inc2
-    print(outv & 0b011111)
-'''
 # --- Read from Matrix ---
 def read2(indata, start1, start2): # indata = ROW or COL, start1 = row, start2 = col
     start2_plus1 = start2 + 1
@@ -54,8 +44,11 @@ def read2(indata, start1, start2): # indata = ROW or COL, start1 = row, start2 =
     return [indata[start1][start2], indata[start1][start2_plus1]]
 
 def read4sqr(indata, start1, start2):# indata = ROW or COL, start1 = row, start2 = col
+    start1_plus1 = start1 + 1
+    if start1_plus1 >= 3:
+        start1_plus1 = 0
     outstring1 = read2(indata, start1, start2)
-    outstring2 = read2(indata, start1 + 1, start2)
+    outstring2 = read2(indata, start1_plus1, start2)
     return outstring1 + outstring2
 
 def read8(indata, start): # indata=Row or Column, Starting=Starting cell Row OR Column number
@@ -92,7 +85,32 @@ def comp8str(inlist): # compare list of 8 strings
 
 #=====End of comp Strings==========       
 
+# ----------Scan ------------------
 
+def scan_all():
+    if row.all() == 1:
+        print('all 1')
+
+def scan8(indata, start): #indata = row, col | # start = 0, 1, 2, 3
+    start_plus1 = start + 1
+    if start_plus1 >= 3:
+        start_plus1 = 0
+    if indata[start].all() > 0 and indata[start_plus1].all() > 0:
+        print(' 8 ones')
+
+#print(read4sqr(row, 0, 0))
+
+def scan4(indata): # use read4sqr()  or list(row(n)) or list(col(n)) to input da
+    if indata.count(1) == 4:
+        print('4 ones found')
+
+def scan2(indata): # use read2(row, n, m) to input data
+    if indata.count(1) == 2:
+        print('2 ones found')
+
+#scan2(read2(row, 0, 0))    
+#scan4(read4sqr(row, 3, 3))
+#scan4(list(row[0]))
 
 if __name__=="__main__":
     pass
