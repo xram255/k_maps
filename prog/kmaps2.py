@@ -13,18 +13,39 @@ COL = ROW.T
 #-------------------------
 # -- Inputs----
 row = np.array([[0, 0, 0, 0],
-                [1, X, 0, 0],
+                [0, 0, X, 0],
                 [1, 1, 1, X],
-                [1, 0, 1, 0]])
+                [0, 1, 0, 0]])
 
 col = row.T
 #-----------------------------
+
+def list_out(): # All data in 16 cells output as a list
+    outlist = []
+    for inc1 in row:
+        for inc2 in inc1:
+            outlist.append(inc2)
+    return outlist
+
+def nums2group(inlist): #numbers left to group
+    outv = 0
+    for inc in inlist:
+        outv += inc
+    return outv & 0b11111
+
+def zeros_count():
+    pass
+
+print(list_out().count(0))
+#print(nums2group(list_out()))
+
+'''
 outv = 0
 for inc1 in row:
     for inc2 in inc1:
-        outv = outv + inc2
+        outv += inc2
     print(outv & 0b011111)
-
+'''
 # --- Read from Matrix ---
 def read2(indata, start1, start2): # indata = ROW or COL, start1 = row, start2 = col
     start2_plus1 = start2 + 1
